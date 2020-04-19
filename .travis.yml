@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - 12.16.2
+  - node
+dist: bionic
+sudo: required
+
+branches:
+  only:
+    - master
+    - staging
+    - develop
+
+before_script:
+  - npm i -g gatsby
+
+script:
+  - npm run test
+  - gatsby build
+
+before_deploy: "echo 'Ready to deploy..'"
+
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "l1IWB5aqdItnjCZRBRzmE36IhrGZPuhWvAuPDKatBpwQpRo/L6TPmW+xgwkGfeIbAGeU8E0Brb/sCiBO42T6wJO2kn/mbAYNQsaRdGU+EkfS+PQz0/aJSEshV8OZMEpwxG2MytxA47LPSJZ1AunCiJ5OSAj5VN/olqS9Q04FsuKKQ/yh3nLw3HHqqQeSivUZyGw7Vqp7fssod2KRjrL9ELywG+daiUf3oE7/MIvb1WpUhpuVnRKQJTG0koGyQDla9R6scrLxwbOPxK2fAGVl5wkRBNJ8ZK9V5yPCDePWG1eVPtAGTNjNV6WM3FeI8nfu7Pc2O9zvVFxIil27PkIZL9v/KkevD9Hl9L6CwBkNWlXNPgISFEUVQJFGoNjbUFGmJ1smBQ9WnE04E9TRESvgjummoHJGEU76iuEsHiwalbf8I1IQbrxsWkXkKpfhViQ1nZhn5cFV5IDg0BhDCWqycVzajSOOVmjHWdaJwTGtHsyPd8oItv0E/Bwwj73FxFpOLfPRHYkPsGgVTT/7lfEvVLrM15dtdQ5GqtUSn9xIm4amB61QsJ5nKXOzd72IusidhsfdnOnnae868eDmkcxNuSndYy1L/tqx0vgZvROt5K5S/tq2JyVkxuO8VqTg4D1iSifEa1PAvOKVXyyc6zf2l0nuAhO1UGhbyAnkXxtCpNs="
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^(staging|master)$
+    node: 12.16.2
