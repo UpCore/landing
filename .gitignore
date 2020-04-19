@@ -61,6 +61,12 @@ public
 # Mac files
 .DS_Store
 
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
 # Yarn
 yarn-error.log
 .pnp/
@@ -70,3 +76,12 @@ yarn-error.log
 
 # Firebase
 .firebase
+
+# Editors / IDE
+.idea
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
