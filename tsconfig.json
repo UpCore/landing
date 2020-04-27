@@ -28,6 +28,7 @@
     "target": "esnext"
   },
   "include": [
-    "src"
+    "src",
+    "types.d.ts"
   ]
 }
