@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    companyName: `UpCore`
+  },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',

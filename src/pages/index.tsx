@@ -1,10 +1,26 @@
 import React from "react"
-import { Layout } from "../components/layout"
-import { Header } from "../components/header/header"
+import { graphql } from "gatsby"
 
-export default () => (
+import { GatsbyDataInterface } from "../api/interfaces/gatsbyData"
+
+import { Layout } from "../components/layout"
+import { HomeHero } from "../components/homeHero/homeHero"
+
+export const HomePage = ({ data }: GatsbyDataInterface) => (
   <Layout>
-    <Header />
-    <p>Hello world</p>
+    <HomeHero {...data.site.siteMetadata} />
   </Layout>
 )
+
+
+export const query = graphql`
+    query {
+        site {
+            siteMetadata {
+                companyName
+            }
+        }
+    }
+`
+
+export default HomePage
