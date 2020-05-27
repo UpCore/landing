@@ -1,0 +1,34 @@
+@import "../../styles/utils/variables";
+
+.home {
+  background-color: $uc-black;
+  text-align: center;
+  &__header {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    color: $uc-white;
+    text-shadow: 0 0 15px $uc-black;
+    animation: headerIn 10s;
+  }
+}
+
+video {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  object-fit: cover;
+}
+
+@keyframes headerIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
