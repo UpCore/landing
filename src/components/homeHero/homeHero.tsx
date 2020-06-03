@@ -1,5 +1,6 @@
 import React from "react"
 
+import HeroPoster from "../../assets/img/hero-poster.jpg"
 import HeroVideo from "../../assets/video/hero.mp4"
 
 import styles from "./homeHero.module.scss"
@@ -15,8 +16,8 @@ export const HomeHero: React.FC<Props> = ({ companyName }) => {
         <h1>{companyName}</h1>
         <p>Rise beyond limits</p>
       </div>
-      <video autoPlay>
-        <source src={HeroVideo}/>
+      <video poster={HeroPoster} autoPlay>
+        <source src={HeroVideo} type="video/mp4"/>
       </video>
     </div>
   )
