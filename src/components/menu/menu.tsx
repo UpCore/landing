@@ -14,8 +14,7 @@ export const Menu: React.FC = (props) => {
   const [collapsed, setCollapsed] = useState<boolean>(true)
   const [toggleDisabled, setToggleDisabled] = useState<boolean>(false)
 
-  console.log('props', props)
-
+  // TODO: Move menu definition to gatsby config
   const menuItems: MenuItem[] = [
     {
       name: "O nas",
