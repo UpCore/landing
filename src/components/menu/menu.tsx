@@ -10,7 +10,7 @@ type MenuItem = {
   path: string
 }
 
-export const Menu: React.FC = (props) => {
+export const Menu: React.FC = () => {
   const [collapsed, setCollapsed] = useState<boolean>(true)
   const [toggleDisabled, setToggleDisabled] = useState<boolean>(false)
 
