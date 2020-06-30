@@ -1,10 +1,12 @@
 import React from "react"
 
-import { Layout } from "../../components/layout"
+import Layout from "../../components/layout"
 
 const AboutPage: React.FC = () => (
   <Layout>
-    <div>About Page</div>
+    <div className="page__header">
+      <h1>About Page</h1>
+    </div>
   </Layout>
 )
 

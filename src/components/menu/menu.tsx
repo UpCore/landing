@@ -38,7 +38,7 @@ export const Menu: React.FC = (props) => {
     return items.map(item => {
       return (
         <li className={styles.menu__item} key={item.path}>
-          <Link to={item.path} className={styles.menu__link} activeClassName="active" state={{blah: true}}>
+          <Link to={item.path} className={styles.menu__link} activeClassName={styles.active} state={{blah: true}}>
             <span className={styles.menu__link__icon}> {item.icon} </span>
             <span className={styles.menu__link__text}> {item.name} </span>
           </Link>

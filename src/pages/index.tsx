@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import { GatsbyDataInterface } from "../api/interfaces/gatsbyData"
 
-import { Layout } from "../components/layout"
+import Layout from "../components/layout"
 import { HomeHero } from "../components/homeHero/homeHero"
 
 const HomePage: React.FC<GatsbyDataInterface> = ({ data }) => (

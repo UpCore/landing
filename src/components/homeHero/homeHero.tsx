@@ -3,9 +3,9 @@ import React from "react"
 import HeroPoster from "../../assets/img/hero-poster.jpg"
 import HeroVideoHD from "../../assets/video/hero-hd.mp4"
 import HeroVideo from "../../assets/video/hero.mp4"
+import { isHD, isMobile } from "../../utils/browser"
 
 import styles from "./homeHero.module.scss"
-import { isHD, isMobile } from "../../utils/browser"
 
 type Props = {
   companyName: string

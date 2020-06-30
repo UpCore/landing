@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode
 }
 
-export const Layout = ({ children }: Props) => (
+const Layout = ({ children }: Props) => (
   <div>
     <main>
       {children}
@@ -18,3 +18,5 @@ export const Layout = ({ children }: Props) => (
     </footer>
   </div>
 )
+
+export default Layout
