@@ -1,13 +1,11 @@
 @import "../../styles/utils/variables";
 
 .home {
-  background-color: $uc-black;
   text-align: center;
   &__header {
     position: relative;
     z-index: 2;
     font-size: 3rem;
-    color: $uc-white;
     text-shadow: 0 0 15px $uc-black;
     animation: headerIn 10s;
   }
@@ -19,7 +17,6 @@
     bottom: 0;
     width: 100vw;
     min-height: 100vh;
-    background-color: $uc-black;
     pointer-events: none;
   }
 

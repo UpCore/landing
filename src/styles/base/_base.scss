@@ -1,3 +1,5 @@
+@import "src/styles/utils/variables";
+
 html {
   font-size: 14px;
 }
@@ -6,6 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
+
+  background-color: $uc-black;
+  color: $uc-white;
 }
 
 h1, h2, h3, h4, h5, h6 {

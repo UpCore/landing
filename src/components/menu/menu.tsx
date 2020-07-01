@@ -2,6 +2,7 @@ import React, { ReactComponentElement, ReactNode, useState } from "react"
 import { MdHome, MdMail, MdMenu, MdPeople } from "react-icons/md"
 
 import styles from "./menu.module.scss"
+import { Link } from "gatsby"
 
 type MenuItem = {
   name: string
@@ -13,21 +14,22 @@ export const Menu: React.FC = () => {
   const [collapsed, setCollapsed] = useState<boolean>(true)
   const [toggleDisabled, setToggleDisabled] = useState<boolean>(false)
 
+  // TODO: Move menu definition to gatsby config
   const menuItems: MenuItem[] = [
     {
       name: "O nas",
       icon: <MdPeople/>,
-      path: "#1",
+      path: "/about",
     },
     {
       name: "Główna",
       icon: <MdHome/>,
-      path: "#2",
+      path: "/",
     },
     {
       name: "Kontakt",
       icon: <MdMail/>,
-      path: "#3",
+      path: "/contact",
     },
   ]
 
@@ -35,10 +37,10 @@ export const Menu: React.FC = () => {
     return items.map(item => {
       return (
         <li className={styles.menu__item} key={item.path}>
-          <a href={item.path} className={styles.menu__link}>
+          <Link to={item.path} className={styles.menu__link} activeClassName={styles.active} state={{blah: true}}>
             <span className={styles.menu__link__icon}> {item.icon} </span>
             <span className={styles.menu__link__text}> {item.name} </span>
-          </a>
+          </Link>
         </li>
       )
     })
