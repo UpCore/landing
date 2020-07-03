@@ -2,12 +2,15 @@
 
 .home {
   text-align: center;
-  &__header {
+
+  &__hero {
     position: relative;
     z-index: 2;
+  }
+
+  &__slogan {
     font-size: 3rem;
     text-shadow: 0 0 15px $uc-black;
-    animation: headerIn 10s;
   }
 
   &__video, &__background {
@@ -29,14 +32,5 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-  }
-}
-
-@keyframes headerIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

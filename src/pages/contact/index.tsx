@@ -4,8 +4,11 @@ import Layout from "../../components/layout"
 
 const ContactPage: React.FC = () => (
   <Layout>
-    <div className="page__header">
-      <h1>Contact Page</h1>
+    <div className="contact">
+      <h1 className="page__header">
+        <span data-letters="Contact Page" />
+        <span data-letters="Contact Page" />
+      </h1>
     </div>
   </Layout>
 )

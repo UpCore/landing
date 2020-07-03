@@ -1,5 +1,6 @@
+@import "../../styles/utils/mixins";
+
 .page__header {
-  h1 {
-    text-align: center;
-  }
+  @include animated-header;
+
 }
