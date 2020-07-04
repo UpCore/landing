@@ -1,0 +1,26 @@
+@keyframes crossingLine {
+  0% {
+    transform: translate3d(-100%,0,0);
+  }
+  100% {
+    transform: translate3d(100%,0,0);
+  }
+}
+
+@keyframes textExpandTop {
+  0% {
+    transform: translate3d(0,100%,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes textExpandBottom {
+  0% {
+    transform: translate3d(0,-100%,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}

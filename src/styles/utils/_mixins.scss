@@ -1,0 +1,78 @@
+@import "../../styles/utils/variables";
+@import "../../styles/utils/animations";
+
+@mixin animated-header {
+  position: relative;
+  overflow: hidden;
+  height: 1.25em;
+  line-height: 1.25;
+  color: transparent;
+  text-align: center;
+
+  span {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+
+    &::before {
+      content: attr(data-letters);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      color: $uc-white;
+      animation-timing-function: cubic-bezier(0, .3, .6, 1);;
+      animation-fill-mode: forwards;
+      animation-duration: .6s;
+      animation-delay: 1.8s;
+    }
+
+    &:first-child {
+      &::before {
+        top: 0;
+        transform: translate3d(0, 100%, 0);
+        animation-name: textExpandTop;
+      }
+    }
+
+    &:last-child {
+      top: 50%;
+
+      &::before {
+        bottom: 0;
+        transform: translate3d(0, -100%, 0);
+        animation-name: textExpandBottom;
+      }
+    }
+  }
+
+  // Crossing lines
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: $uc-white;
+    transform: translate3d(-100%, 0, 0);
+    animation-name: crossingLine;
+    animation-timing-function: cubic-bezier(.7, 0, .3, 1);
+    animation-fill-mode: forwards;
+  }
+
+  &::before {
+    height: 1px;
+    top: 40%;
+    animation-duration: .6s;
+    animation-delay: 1.5s;
+  }
+
+  &::after {
+    height: 2px;
+    top: 60%;
+    animation-duration: .8s;
+    animation-delay: 1.5s;
+  }
+}
+
