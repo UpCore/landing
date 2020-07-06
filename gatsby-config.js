@@ -7,6 +7,20 @@
 module.exports = {
   siteMetadata: {
     companyName: `UpCore`,
+    menuLinks: [
+      {
+        name: "O nas",
+        path: "/about",
+      },
+      {
+        name: "Główna",
+        path: "/",
+      },
+      {
+        name: "Kontakt",
+        path: "/contact",
+      },
+    ]
   },
   plugins: [
     "gatsby-plugin-sass",
