@@ -4,14 +4,11 @@ import HeroPoster from "../../assets/img/hero-poster.jpg"
 import HeroVideoHD from "../../assets/video/hero-hd.mp4"
 import HeroVideo from "../../assets/video/hero.mp4"
 import { isHD, isMobile } from "../../utils/browser"
+import { SiteMetaDataResponse } from "../../api/interfaces/gatsbyData"
 
 import styles from "./homeHero.module.scss"
 
-type Props = {
-  companyName: string
-}
-
-export const HomeHero: React.FC<Props> = ({ companyName }) => {
+export const HomeHero: React.FC<SiteMetaDataResponse> = ({ companyName }) => {
   const heroVideoSrc = isHD() ? HeroVideoHD : HeroVideo
 
   return (

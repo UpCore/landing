@@ -3,43 +3,25 @@ import { MdHome, MdMail, MdMenu, MdPeople } from "react-icons/md"
 
 import styles from "./menu.module.scss"
 import { Link } from "gatsby"
-
-type MenuItem = {
-  name: string
-  icon: ReactComponentElement<any>
-  path: string
-}
+import { useSiteMetadata } from "../../hooks/useSiteMetadata"
 
 export const Menu: React.FC = () => {
+  const { menuLinks } = useSiteMetadata()
+
   const [collapsed, setCollapsed] = useState<boolean>(true)
   const [toggleDisabled, setToggleDisabled] = useState<boolean>(false)
 
-  // TODO: Move menu definition to gatsby config
-  const menuItems: MenuItem[] = [
-    {
-      name: "O nas",
-      icon: <MdPeople/>,
-      path: "/about",
-    },
-    {
-      name: "Główna",
-      icon: <MdHome/>,
-      path: "/",
-    },
-    {
-      name: "Kontakt",
-      icon: <MdMail/>,
-      path: "/contact",
-    },
-  ]
+  const generateItems = (): ReactNode => {
+    const icons: ReactComponentElement<any>[] = [<MdPeople/>, <MdHome/>, <MdMail/>]
 
-  const generateItems = (items: MenuItem[]): ReactNode => {
-    return items.map(item => {
+    return menuLinks.map((item, index: number) => {
+      const { path, name } = item
+
       return (
-        <li className={styles.menu__item} key={item.path}>
-          <Link to={item.path} className={styles.menu__link} activeClassName={styles.active} state={{blah: true}}>
-            <span className={styles.menu__link__icon}> {item.icon} </span>
-            <span className={styles.menu__link__text}> {item.name} </span>
+        <li className={styles.menu__item} key={path}>
+          <Link to={item.path} className={styles.menu__link} activeClassName={styles.active}>
+            <span className={styles.menu__link__icon}> {icons[index]} </span>
+            <span className={styles.menu__link__text}> {name} </span>
           </Link>
         </li>
       )
@@ -60,9 +42,9 @@ export const Menu: React.FC = () => {
   return (
     <>
       <nav className={`${styles.menu} ${collapsed ? styles.collapsed : ""}`}>
-        {!!menuItems.length &&
+        {!!menuLinks.length &&
         <ul className={styles.menu__list}>
-          {generateItems(menuItems)}
+          {generateItems()}
         </ul>
         }
       </nav>
