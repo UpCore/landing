@@ -1,12 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-type SiteMetaDataResponse = {
-  companyName: string
-  menuLinks: {
-    name: string
-    path: string
-  }[]
-}
+import { SiteMetaDataResponse } from "../api/interfaces/gatsbyData"
 
 export const useSiteMetadata = (): SiteMetaDataResponse => {
   const { site } = useStaticQuery(

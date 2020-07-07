@@ -1,9 +1,15 @@
-export interface GatsbyDataInterface {
+export type GatsbyDataInterface = {
   data: {
     site: {
-      siteMetadata: {
-        companyName: string
-      }
+      siteMetadata: SiteMetaDataResponse
     }
   }
+}
+
+export type SiteMetaDataResponse = {
+  companyName: string
+  menuLinks: {
+    name: string
+    path: string
+  }[]
 }
